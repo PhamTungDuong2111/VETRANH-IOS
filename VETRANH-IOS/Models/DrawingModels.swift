@@ -81,3 +81,4 @@ public struct Stroke {
         self.isRainbow = isRainbow
     }
 }
+

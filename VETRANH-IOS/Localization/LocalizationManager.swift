@@ -50,6 +50,7 @@ public final class LocalizationManager: ObservableObject {
         "share": "Share",
         "save": "Save",
         "clear": "Clear",
+        "close": "Close",
         "size_label": "Size: %ddp",
         "brush_neon": "Neon",
         "brush_rainbow": "Rainbow",
@@ -88,7 +89,24 @@ public final class LocalizationManager: ObservableObject {
         "toast_lang_changed": "Language changed to English",
         "clear_photo_prompt": "Background Photo Options",
         "remove_photo": "Remove Photo",
-        "change_photo": "Change Photo"
+        "change_photo": "Change Photo",
+
+        // Music & Video Strings
+        "music": "Music",
+        "music_settings": "🎵 Background Music",
+        "music_subtitle": "Select track or turn off sound",
+        "music_off": "Music Off (Muted)",
+        "music_on": "Music Playing",
+        "video_replay_title": "🎬 Drawing Timelapse Video",
+        "video_step_by_step": "🎬 Step-by-Step Video",
+        "step_counter": "Stroke: Step %1$d / %2$d",
+        "change_music": "Music",
+        "export_mp4_video": "🎥 Export Video (MP4)",
+        "exporting_video": "Encoding MP4 video… %1$d%%",
+        "video_export_success": "🎉 Video exported to Gallery (Movies/NeonDraw)!",
+        "video_export_error": "Failed to export video",
+        "replay": "Replay",
+        "speed": "Speed"
     ]
 
     private let viStrings: [String: String] = [
@@ -101,6 +119,7 @@ public final class LocalizationManager: ObservableObject {
         "share": "Chia sẻ",
         "save": "Lưu",
         "clear": "Xóa",
+        "close": "Đóng",
         "size_label": "Cỡ nét: %ddp",
         "brush_neon": "Neon",
         "brush_rainbow": "Cầu vồng",
@@ -139,6 +158,23 @@ public final class LocalizationManager: ObservableObject {
         "toast_lang_changed": "Đã chuyển sang Tiếng Việt",
         "clear_photo_prompt": "Tùy chọn Ảnh nền",
         "remove_photo": "Xóa ảnh nền",
-        "change_photo": "Đổi ảnh khác"
+        "change_photo": "Đổi ảnh khác",
+
+        // Music & Video Strings
+        "music": "Âm nhạc",
+        "music_settings": "🎵 Nhạc nền",
+        "music_subtitle": "Chọn bài hát nền hoặc tắt âm thanh",
+        "music_off": "Đã tắt nhạc",
+        "music_on": "Đang phát nhạc",
+        "video_replay_title": "🎬 Video tái hiện nét vẽ",
+        "video_step_by_step": "🎬 Video từng bước nét vẽ",
+        "step_counter": "Nét vẽ: Bước %1$d / %2$d",
+        "change_music": "Đổi nhạc",
+        "export_mp4_video": "🎥 Xuất video (MP4)",
+        "exporting_video": "Đang kết xuất video MP4… %1$d%%",
+        "video_export_success": "🎉 Đã xuất video vào Thư viện (Movies/NeonDraw)!",
+        "video_export_error": "Lỗi khi xuất video",
+        "replay": "Tua lại",
+        "speed": "Tốc độ"
     ]
 }

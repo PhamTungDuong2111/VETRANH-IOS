@@ -50,3 +50,4 @@ public struct TemplateThumbnailView: View {
         .frame(width: size, height: size)
     }
 }
+

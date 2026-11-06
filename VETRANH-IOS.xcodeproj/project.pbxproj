@@ -11,19 +11,29 @@
 		00001000000000022D000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000022D000001 /* ContentView.swift */; };
 		00001000000000042D000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00002000000000042D000001 /* Assets.xcassets */; };
 		00001000000000052D000001 /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000052D000001 /* DrawingCanvasView.swift */; };
-		00001000000000062D000001 /* TemplateShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000062D000001 /* TemplateShapes.swift */; };
-		00001000000000072D000001 /* TemplateThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000072D000001 /* TemplateThumbnailView.swift */; };
-		00001000000000082D000001 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000082D000001 /* LocalizationManager.swift */; };
-		00001000000000092D000001 /* DrawingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000092D000001 /* DrawingModels.swift */; };
-		000010000000000A2D000001 /* StencilType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000A2D000001 /* StencilType.swift */; };
-		000010000000000B2D000001 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000B2D000001 /* Color+Extensions.swift */; };
-		000010000000000C2D000001 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000C2D000001 /* ImagePicker.swift */; };
-		000010000000000D2D000001 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000D2D000001 /* ShareSheet.swift */; };
-		000010000000000E2D000001 /* TopToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000E2D000001 /* TopToolbarView.swift */; };
-		000010000000000F2D000001 /* BottomToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000F2D000001 /* BottomToolbarView.swift */; };
-		00001000000000102D000001 /* TemplateGallerySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000102D000001 /* TemplateGallerySheet.swift */; };
-		00001000000000112D000001 /* SaveSuccessDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000112D000001 /* SaveSuccessDialog.swift */; };
-		00001000000000122D000001 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000122D000001 /* ToastView.swift */; };
+		00001000000000062D000001 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000062D000001 /* MusicManager.swift */; };
+		00001000000000072D000001 /* TemplateShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000072D000001 /* TemplateShapes.swift */; };
+		00001000000000082D000001 /* TemplateThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000082D000001 /* TemplateThumbnailView.swift */; };
+		00001000000000092D000001 /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000092D000001 /* VideoExporter.swift */; };
+		000010000000000A2D000001 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000A2D000001 /* LocalizationManager.swift */; };
+		000010000000000B2D000001 /* DrawingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000B2D000001 /* DrawingModels.swift */; };
+		000010000000000C2D000001 /* StencilType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000000C2D000001 /* StencilType.swift */; };
+		000010000000000D2D000001 /* music_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 000020000000000D2D000001 /* music_1.wav */; };
+		000010000000000E2D000001 /* music_22222.wav in Resources */ = {isa = PBXBuildFile; fileRef = 000020000000000E2D000001 /* music_22222.wav */; };
+		000010000000000F2D000001 /* music_333.wav in Resources */ = {isa = PBXBuildFile; fileRef = 000020000000000F2D000001 /* music_333.wav */; };
+		00001000000000102D000001 /* music_44.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00002000000000102D000001 /* music_44.wav */; };
+		00001000000000112D000001 /* music_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00002000000000112D000001 /* music_5.wav */; };
+		00001000000000122D000001 /* music_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00002000000000122D000001 /* music_6.wav */; };
+		00001000000000132D000001 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000132D000001 /* Color+Extensions.swift */; };
+		00001000000000142D000001 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000142D000001 /* ImagePicker.swift */; };
+		00001000000000152D000001 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000152D000001 /* ShareSheet.swift */; };
+		00001000000000162D000001 /* BottomToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000162D000001 /* BottomToolbarView.swift */; };
+		00001000000000172D000001 /* MusicSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000172D000001 /* MusicSettingsSheet.swift */; };
+		00001000000000182D000001 /* SaveSuccessDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000182D000001 /* SaveSuccessDialog.swift */; };
+		00001000000000192D000001 /* TemplateGallerySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00002000000000192D000001 /* TemplateGallerySheet.swift */; };
+		000010000000001A2D000001 /* TimelapseReplaySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000001A2D000001 /* TimelapseReplaySheet.swift */; };
+		000010000000001B2D000001 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000001B2D000001 /* ToastView.swift */; };
+		000010000000001C2D000001 /* TopToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000020000000001C2D000001 /* TopToolbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,19 +42,29 @@
 		00002000000000032D000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App/Info.plist"; sourceTree = "<group>"; };
 		00002000000000042D000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
 		00002000000000052D000001 /* DrawingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core/DrawingCanvasView.swift"; sourceTree = "<group>"; };
-		00002000000000062D000001 /* TemplateShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core/TemplateShapes.swift"; sourceTree = "<group>"; };
-		00002000000000072D000001 /* TemplateThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core/TemplateThumbnailView.swift"; sourceTree = "<group>"; };
-		00002000000000082D000001 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localization/LocalizationManager.swift"; sourceTree = "<group>"; };
-		00002000000000092D000001 /* DrawingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/DrawingModels.swift"; sourceTree = "<group>"; };
-		000020000000000A2D000001 /* StencilType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/StencilType.swift"; sourceTree = "<group>"; };
-		000020000000000B2D000001 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utilities/Color+Extensions.swift"; sourceTree = "<group>"; };
-		000020000000000C2D000001 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utilities/ImagePicker.swift"; sourceTree = "<group>"; };
-		000020000000000D2D000001 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utilities/ShareSheet.swift"; sourceTree = "<group>"; };
-		000020000000000E2D000001 /* TopToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/TopToolbarView.swift"; sourceTree = "<group>"; };
-		000020000000000F2D000001 /* BottomToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/BottomToolbarView.swift"; sourceTree = "<group>"; };
-		00002000000000102D000001 /* TemplateGallerySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/TemplateGallerySheet.swift"; sourceTree = "<group>"; };
-		00002000000000112D000001 /* SaveSuccessDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/SaveSuccessDialog.swift"; sourceTree = "<group>"; };
-		00002000000000122D000001 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/ToastView.swift"; sourceTree = "<group>"; };
+		00002000000000062D000001 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core/MusicManager.swift"; sourceTree = "<group>"; };
+		00002000000000072D000001 /* TemplateShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core/TemplateShapes.swift"; sourceTree = "<group>"; };
+		00002000000000082D000001 /* TemplateThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core/TemplateThumbnailView.swift"; sourceTree = "<group>"; };
+		00002000000000092D000001 /* VideoExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core/VideoExporter.swift"; sourceTree = "<group>"; };
+		000020000000000A2D000001 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localization/LocalizationManager.swift"; sourceTree = "<group>"; };
+		000020000000000B2D000001 /* DrawingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/DrawingModels.swift"; sourceTree = "<group>"; };
+		000020000000000C2D000001 /* StencilType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/StencilType.swift"; sourceTree = "<group>"; };
+		000020000000000D2D000001 /* music_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Resources/Music/music_1.wav"; sourceTree = "<group>"; };
+		000020000000000E2D000001 /* music_22222.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Resources/Music/music_22222.wav"; sourceTree = "<group>"; };
+		000020000000000F2D000001 /* music_333.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Resources/Music/music_333.wav"; sourceTree = "<group>"; };
+		00002000000000102D000001 /* music_44.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Resources/Music/music_44.wav"; sourceTree = "<group>"; };
+		00002000000000112D000001 /* music_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Resources/Music/music_5.wav"; sourceTree = "<group>"; };
+		00002000000000122D000001 /* music_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Resources/Music/music_6.wav"; sourceTree = "<group>"; };
+		00002000000000132D000001 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utilities/Color+Extensions.swift"; sourceTree = "<group>"; };
+		00002000000000142D000001 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utilities/ImagePicker.swift"; sourceTree = "<group>"; };
+		00002000000000152D000001 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utilities/ShareSheet.swift"; sourceTree = "<group>"; };
+		00002000000000162D000001 /* BottomToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/BottomToolbarView.swift"; sourceTree = "<group>"; };
+		00002000000000172D000001 /* MusicSettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/MusicSettingsSheet.swift"; sourceTree = "<group>"; };
+		00002000000000182D000001 /* SaveSuccessDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/SaveSuccessDialog.swift"; sourceTree = "<group>"; };
+		00002000000000192D000001 /* TemplateGallerySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/TemplateGallerySheet.swift"; sourceTree = "<group>"; };
+		000020000000001A2D000001 /* TimelapseReplaySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/TimelapseReplaySheet.swift"; sourceTree = "<group>"; };
+		000020000000001B2D000001 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/ToastView.swift"; sourceTree = "<group>"; };
+		000020000000001C2D000001 /* TopToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/TopToolbarView.swift"; sourceTree = "<group>"; };
 		00002000000000992D000001 /* VETRANH-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VETRANH-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,19 +103,29 @@
 				00002000000000032D000001 /* Info.plist */,
 				00002000000000042D000001 /* Assets.xcassets */,
 				00002000000000052D000001 /* DrawingCanvasView.swift */,
-				00002000000000062D000001 /* TemplateShapes.swift */,
-				00002000000000072D000001 /* TemplateThumbnailView.swift */,
-				00002000000000082D000001 /* LocalizationManager.swift */,
-				00002000000000092D000001 /* DrawingModels.swift */,
-				000020000000000A2D000001 /* StencilType.swift */,
-				000020000000000B2D000001 /* Color+Extensions.swift */,
-				000020000000000C2D000001 /* ImagePicker.swift */,
-				000020000000000D2D000001 /* ShareSheet.swift */,
-				000020000000000E2D000001 /* TopToolbarView.swift */,
-				000020000000000F2D000001 /* BottomToolbarView.swift */,
-				00002000000000102D000001 /* TemplateGallerySheet.swift */,
-				00002000000000112D000001 /* SaveSuccessDialog.swift */,
-				00002000000000122D000001 /* ToastView.swift */,
+				00002000000000062D000001 /* MusicManager.swift */,
+				00002000000000072D000001 /* TemplateShapes.swift */,
+				00002000000000082D000001 /* TemplateThumbnailView.swift */,
+				00002000000000092D000001 /* VideoExporter.swift */,
+				000020000000000A2D000001 /* LocalizationManager.swift */,
+				000020000000000B2D000001 /* DrawingModels.swift */,
+				000020000000000C2D000001 /* StencilType.swift */,
+				000020000000000D2D000001 /* music_1.wav */,
+				000020000000000E2D000001 /* music_22222.wav */,
+				000020000000000F2D000001 /* music_333.wav */,
+				00002000000000102D000001 /* music_44.wav */,
+				00002000000000112D000001 /* music_5.wav */,
+				00002000000000122D000001 /* music_6.wav */,
+				00002000000000132D000001 /* Color+Extensions.swift */,
+				00002000000000142D000001 /* ImagePicker.swift */,
+				00002000000000152D000001 /* ShareSheet.swift */,
+				00002000000000162D000001 /* BottomToolbarView.swift */,
+				00002000000000172D000001 /* MusicSettingsSheet.swift */,
+				00002000000000182D000001 /* SaveSuccessDialog.swift */,
+				00002000000000192D000001 /* TemplateGallerySheet.swift */,
+				000020000000001A2D000001 /* TimelapseReplaySheet.swift */,
+				000020000000001B2D000001 /* ToastView.swift */,
+				000020000000001C2D000001 /* TopToolbarView.swift */,
 			);
 			path = "VETRANH-IOS";
 			sourceTree = "<group>";
@@ -159,6 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				00001000000000042D000001 /* Assets.xcassets in Resources */,
+				000010000000000D2D000001 /* music_1.wav in Resources */,
+				000010000000000E2D000001 /* music_22222.wav in Resources */,
+				000010000000000F2D000001 /* music_333.wav in Resources */,
+				00001000000000102D000001 /* music_44.wav in Resources */,
+				00001000000000112D000001 /* music_5.wav in Resources */,
+				00001000000000122D000001 /* music_6.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,19 +208,23 @@
 				00001000000000012D000001 /* VETRANHApp.swift in Sources */,
 				00001000000000022D000001 /* ContentView.swift in Sources */,
 				00001000000000052D000001 /* DrawingCanvasView.swift in Sources */,
-				00001000000000062D000001 /* TemplateShapes.swift in Sources */,
-				00001000000000072D000001 /* TemplateThumbnailView.swift in Sources */,
-				00001000000000082D000001 /* LocalizationManager.swift in Sources */,
-				00001000000000092D000001 /* DrawingModels.swift in Sources */,
-				000010000000000A2D000001 /* StencilType.swift in Sources */,
-				000010000000000B2D000001 /* Color+Extensions.swift in Sources */,
-				000010000000000C2D000001 /* ImagePicker.swift in Sources */,
-				000010000000000D2D000001 /* ShareSheet.swift in Sources */,
-				000010000000000E2D000001 /* TopToolbarView.swift in Sources */,
-				000010000000000F2D000001 /* BottomToolbarView.swift in Sources */,
-				00001000000000102D000001 /* TemplateGallerySheet.swift in Sources */,
-				00001000000000112D000001 /* SaveSuccessDialog.swift in Sources */,
-				00001000000000122D000001 /* ToastView.swift in Sources */,
+				00001000000000062D000001 /* MusicManager.swift in Sources */,
+				00001000000000072D000001 /* TemplateShapes.swift in Sources */,
+				00001000000000082D000001 /* TemplateThumbnailView.swift in Sources */,
+				00001000000000092D000001 /* VideoExporter.swift in Sources */,
+				000010000000000A2D000001 /* LocalizationManager.swift in Sources */,
+				000010000000000B2D000001 /* DrawingModels.swift in Sources */,
+				000010000000000C2D000001 /* StencilType.swift in Sources */,
+				00001000000000132D000001 /* Color+Extensions.swift in Sources */,
+				00001000000000142D000001 /* ImagePicker.swift in Sources */,
+				00001000000000152D000001 /* ShareSheet.swift in Sources */,
+				00001000000000162D000001 /* BottomToolbarView.swift in Sources */,
+				00001000000000172D000001 /* MusicSettingsSheet.swift in Sources */,
+				00001000000000182D000001 /* SaveSuccessDialog.swift in Sources */,
+				00001000000000192D000001 /* TemplateGallerySheet.swift in Sources */,
+				000010000000001A2D000001 /* TimelapseReplaySheet.swift in Sources */,
+				000010000000001B2D000001 /* ToastView.swift in Sources */,
+				000010000000001C2D000001 /* TopToolbarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

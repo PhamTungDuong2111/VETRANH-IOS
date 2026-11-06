@@ -736,6 +736,101 @@ public final class DrawingCanvasUIView: UIView {
             }
         }
     }
+
+    // MARK: - Timelapse & Step-by-Step Progress Rendering
+
+    public func getTotalDrawingPoints() -> Int {
+        return strokes.reduce(0) { $0 + $1.points.count }
+    }
+
+    public func hasDrawing() -> Bool {
+        return !strokes.isEmpty
+    }
+
+    public func getTotalSteps() -> Int {
+        return strokes.isEmpty ? 10 : strokes.count
+    }
+
+    public func renderProgressToBitmap(progress: CGFloat, targetSize: CGSize = CGSize(width: 720, height: 1280)) -> UIImage {
+        let size = targetSize.width > 0 && targetSize.height > 0 ? targetSize : CGSize(width: 720, height: 1280)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1.0
+        format.opaque = true
+
+        let renderer = UIGraphicsImageRenderer(size: size, format: format)
+        return renderer.image { ctx in
+            let cg = ctx.cgContext
+
+            // 1. Black background
+            cg.setFillColor(UIColor.black.cgColor)
+            cg.fill(CGRect(origin: .zero, size: size))
+
+            // 2. Photo background
+            if let photo = backgroundPhoto {
+                drawAspectFit(image: photo, in: CGRect(origin: .zero, size: size), context: cg)
+            }
+
+            // 3. Render strokes up to progress
+            let totalPts = getTotalDrawingPoints()
+            if totalPts == 0 {
+                // If no strokes yet, render demo/stencil shape progressively
+                let stencilToDraw = currentStencil != .none ? currentStencil : .heart
+                let padW = size.width * 0.12
+                let padH = size.height * 0.18
+                let bounds = CGRect(x: padW, y: padH, width: size.width - padW * 2.0, height: size.height - padH * 2.0)
+                let fullBezier = TemplateShapes.createPath(type: stencilToDraw, bounds: bounds)
+
+                let swiftUIPath = Path(fullBezier.cgPath).trimmedPath(from: 0, to: max(0.01, min(progress, 1.0)))
+
+                cg.saveGState()
+                cg.setShadow(offset: .zero, blur: 16.0, color: UIColor.neonCyan.cgColor)
+                cg.setStrokeColor(UIColor.neonCyan.withAlphaComponent(0.8).cgColor)
+                cg.setLineWidth(14.0)
+                cg.setLineCap(.round)
+                cg.setLineJoin(.round)
+                cg.addPath(swiftUIPath.cgPath)
+                cg.strokePath()
+                cg.restoreGState()
+
+                cg.saveGState()
+                cg.setStrokeColor(UIColor.white.cgColor)
+                cg.setLineWidth(5.0)
+                cg.setLineCap(.round)
+                cg.setLineJoin(.round)
+                cg.addPath(swiftUIPath.cgPath)
+                cg.strokePath()
+                cg.restoreGState()
+                return
+            }
+
+            let targetPts = max(1, Int(CGFloat(totalPts) * max(0.0, min(progress, 1.0))))
+            var pointsAccumulated = 0
+
+            for stroke in strokes {
+                let strokePts = stroke.points.count
+                if pointsAccumulated + strokePts <= targetPts {
+                    drawStroke(stroke, in: cg, canvasSize: size)
+                    pointsAccumulated += strokePts
+                } else {
+                    let remaining = targetPts - pointsAccumulated
+                    if remaining >= 2 {
+                        let partialPoints = Array(stroke.points.prefix(remaining))
+                        var partialStroke = stroke
+                        partialStroke.points = partialPoints
+                        drawStroke(partialStroke, in: cg, canvasSize: size)
+                    }
+                    break
+                }
+            }
+        }
+    }
+
+    public func renderStepToBitmap(step: Int, targetSize: CGSize = CGSize(width: 720, height: 1280)) -> UIImage {
+        let totalSteps = getTotalSteps()
+        let safeStep = max(0, min(step, totalSteps))
+        let progress = totalSteps > 0 ? CGFloat(safeStep) / CGFloat(totalSteps) : 1.0
+        return renderProgressToBitmap(progress: progress, targetSize: targetSize)
+    }
 }
 
 // MARK: - SwiftUI Representable Wrapper
@@ -753,3 +848,4 @@ public struct DrawingCanvasRepresentable: UIViewRepresentable {
         uiView.onHistoryChanged = onHistoryChanged
     }
 }
+

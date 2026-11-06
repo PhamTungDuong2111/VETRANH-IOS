@@ -47,6 +47,18 @@ Bao gồm trọn vẹn **100 mẫu vẽ vector** chia làm 4 danh mục với th
 - Chuyển đổi ngôn ngữ trực tiếp ngay trong ứng dụng qua nút biểu tượng cờ `🇻🇳 VI` / `🇬🇧 EN`.
 - Toàn bộ giao diện, tiêu đề hộp thoại, thông báo Toast, tên 100 mẫu vẽ và danh mục đều được dịch chuẩn xác.
 
+### 8. 🎵 Trình Phát Nhạc Nền Thư Giãn (Background Music)
+- Tích hợp sẵn trọn vẹn **6 bản nhạc nền thư giãn** (`music_1.wav` đến `music_6.wav`) giống hệt phiên bản Android.
+- **Pill điều khiển nhanh** trên thanh công cụ phụ: hiển thị nốt nhạc hoạt họa, tên bài hát đang phát và nút bật/tắt câm tiếng (Mute) tiện lợi.
+- **Hộp thoại Cài đặt Nhạc**: cho phép bật/tắt nhạc nền, điều chỉnh âm lượng mượt mà và chuyển đổi qua lại giữa 6 bản nhạc với giao diện phát sáng neon tuyệt đẹp.
+
+### 9. 🎬 Tái Hiện Từng Nét Vẽ & Xuất Video MP4 (Timelapse Video Replay & Export)
+- Nút bấm **Replay Video** phát sáng nổi bật trên thanh công cụ phụ.
+- **Trình phát lại mượt mà**: tua lại từng nét vẽ từ nét đầu tiên cho đến khi hoàn thiện tác phẩm, hỗ trợ thanh trượt Scrubber xem trước bất kỳ thời điểm nào.
+- **3 tốc độ xem lại linh hoạt**: `1x`, `2x`, `4x`.
+- **Bộ mã hóa video phần cứng chuẩn MP4 (H.264)**: dựng video chất lượng cao (720x1280, 30fps) bằng `AVAssetWriter` và `CVPixelBuffer`, hỗ trợ lưu thẳng vào Photos và chia sẻ video qua AirDrop/mạng xã hội.
+- Khi chưa vẽ nét nào, hệ thống tự động tái hiện hoạt họa vẽ dần theo đường nét mẫu Stencil được chọn.
+
 ---
 
 ## 📁 Cấu Trúc Dự Án (Project Structure)
@@ -65,6 +77,8 @@ VETRANH-IOS/
     │   └── ContentView.swift              # Màn hình chính kết nối toàn bộ tính năng
     ├── Core/
     │   ├── DrawingCanvasView.swift        # Engine vẽ CoreGraphics hiệu năng cao, đệm offscreen
+    │   ├── MusicManager.swift             # Quản lý phát nhạc nền đa luồng, vòng lặp và âm lượng
+    │   ├── VideoExporter.swift            # Bộ mã hóa AVAssetWriter xuất video MP4 720x1280 30fps
     │   ├── TemplateShapes.swift           # Vector Bezier Path chuẩn xác cho 100 mẫu stencil
     │   └── TemplateThumbnailView.swift    # Thẻ preview vector thumbnail cho danh sách mẫu
     ├── Models/
@@ -73,15 +87,19 @@ VETRANH-IOS/
     ├── Localization/
     │   └── LocalizationManager.swift      # Quản lý ngôn ngữ song ngữ Tiếng Việt & English
     ├── Views/
-    │   ├── TopToolbarView.swift           # Thanh công cụ trên (Undo, Redo, Đối xứng, Mẫu vẽ,...)
+    │   ├── TopToolbarView.swift           # Thanh công cụ kép (Undo, Redo, Video, Nhạc, Đối xứng, Mẫu vẽ,...)
     │   ├── BottomToolbarView.swift        # Thanh công cụ dưới (Cọ, Kích thước, Bảng màu, Xóa)
+    │   ├── MusicSettingsSheet.swift       # Hộp thoại cài đặt âm nhạc, âm lượng và 6 bài hát
+    │   ├── TimelapseReplaySheet.swift     # Modal tua lại từng nét vẽ & xuất video timelapse MP4
     │   ├── TemplateGallerySheet.swift     # Modal chọn mẫu vẽ lưới 3 cột và bộ lọc 4 danh mục
     │   ├── SaveSuccessDialog.swift        # Hộp thoại phát sáng khi lưu tranh thành công
     │   └── ToastView.swift                # Thông báo HUD nổi phong cách Neon
     ├── Utilities/
     │   ├── Color+Extensions.swift         # Bảng màu 12 màu neon & tiện ích hex
     │   ├── ImagePicker.swift              # Trình chọn ảnh từ Photo Library (PHPicker)
-    │   └── ShareSheet.swift               # Trình chia sẻ ảnh tiêu chuẩn iOS
+    │   └── ShareSheet.swift               # Trình chia sẻ ảnh/video tiêu chuẩn iOS
+    ├── Resources/
+    │   └── Music/                         # 6 bản nhạc nền WAV (music_1.wav -> music_6.wav)
     └── Assets.xcassets/
         ├── AccentColor.colorset
         └── AppIcon.appiconset
@@ -128,3 +146,4 @@ VETRANH-IOS/
 ## 📜 Giấy phép & Bản quyền
 Dự án được xây dựng và đóng gói độc quyền cho tác giả **PhamTungDuong2111**.
 Mọi thắc mắc hoặc yêu cầu bổ sung xin liên hệ qua email: `duongptth05816@gmail.com`.
+

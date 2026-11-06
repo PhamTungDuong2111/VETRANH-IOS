@@ -165,3 +165,4 @@ public struct TemplateGallerySheet: View {
         }
     }
 }
+

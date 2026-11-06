@@ -40,3 +40,4 @@ public struct ToastView: View {
         .transition(.move(edge: .top).combined(with: .opacity))
     }
 }
+

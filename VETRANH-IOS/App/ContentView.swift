@@ -8,6 +8,7 @@ import Photos
 
 public struct ContentView: View {
     @StateObject private var loc = LocalizationManager.shared
+    @StateObject private var music = MusicManager.shared
 
     // Canvas instance
     @State private var canvasView = DrawingCanvasUIView()
@@ -31,6 +32,9 @@ public struct ContentView: View {
     @State private var showClearAlert: Bool = false
     @State private var showLanguageDialog: Bool = false
     @State private var showShareSheet: Bool = false
+    @State private var showMusicSettings: Bool = false
+    @State private var showTimelapseReplay: Bool = false
+
     @State private var shareImage: UIImage? = nil
     @State private var savedArtworkImage: UIImage? = nil
     @State private var showSaveSuccess: Bool = false
@@ -54,7 +58,7 @@ public struct ContentView: View {
 
             // Overlay UI Controls
             VStack {
-                // Top Header Toolbar
+                // Top Header Toolbars (Row 1 + Row 2)
                 TopToolbarView(
                     canUndo: canUndo,
                     canRedo: canRedo,
@@ -96,6 +100,12 @@ public struct ContentView: View {
                     },
                     onSaveTapped: {
                         saveArtworkToGallery()
+                    },
+                    onVideoTapped: {
+                        showTimelapseReplay = true
+                    },
+                    onMusicTapped: {
+                        showMusicSettings = true
                     }
                 )
                 .padding(.top, 8)
@@ -171,6 +181,14 @@ public struct ContentView: View {
                     showToast(loc.text("toast_freehand_mode"))
                 }
             )
+        }
+        // Music Settings Sheet
+        .sheet(isPresented: $showMusicSettings) {
+            MusicSettingsSheet()
+        }
+        // Timelapse Replay Video Sheet
+        .sheet(isPresented: $showTimelapseReplay) {
+            TimelapseReplaySheet(canvasView: canvasView)
         }
         // Photo Picker Sheet
         .sheet(isPresented: $showImagePicker) {
