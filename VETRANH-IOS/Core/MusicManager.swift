@@ -26,22 +26,22 @@ public final class MusicManager: ObservableObject {
 
     private let keySelectedTrack = "neon_selected_track_id"
     private let keyIsMuted = "neon_music_is_muted"
-    private let keyVolume = "neon_music_volume"
+    private let keyVolume = "neon_music_volume_v2"
 
     public static let tracks: [MusicTrack] = [
-        MusicTrack(id: 1, title: "Bài 1", fileName: "1.mp3", resourceName: "music_1"),
-        MusicTrack(id: 2, title: "Bài 2", fileName: "22222.mp3", resourceName: "music_22222"),
-        MusicTrack(id: 3, title: "Bài 3", fileName: "333.mp3", resourceName: "music_333"),
-        MusicTrack(id: 4, title: "Bài 4", fileName: "44.mp3", resourceName: "music_44"),
-        MusicTrack(id: 5, title: "Bài 5", fileName: "5.mp3", resourceName: "music_5"),
-        MusicTrack(id: 6, title: "Bài 6", fileName: "6.mp3", resourceName: "music_6")
+        MusicTrack(id: 1, title: "Bài 1", fileName: "1.mp3", resourceName: "1"),
+        MusicTrack(id: 2, title: "Bài 2", fileName: "22222.mp3", resourceName: "22222"),
+        MusicTrack(id: 3, title: "Bài 3", fileName: "333.mp3", resourceName: "333"),
+        MusicTrack(id: 4, title: "Bài 4", fileName: "44.mp3", resourceName: "44"),
+        MusicTrack(id: 5, title: "Bài 5", fileName: "5.mp3", resourceName: "5"),
+        MusicTrack(id: 6, title: "Bài 6", fileName: "6.mp3", resourceName: "6")
     ]
 
     private var audioPlayer: AVAudioPlayer?
 
     @Published public var currentTrackId: Int = 1
     @Published public var isMuted: Bool = false
-    @Published public var volume: Float = 0.8
+    @Published public var volume: Float = 1.0
 
     public var currentTrack: MusicTrack {
         MusicManager.tracks.first(where: { $0.id == currentTrackId }) ?? MusicManager.tracks[0]
@@ -59,9 +59,10 @@ public final class MusicManager: ObservableObject {
         }
 
         if prefs.object(forKey: keyVolume) != nil {
-            self.volume = prefs.float(forKey: keyVolume)
+            let savedVol = prefs.float(forKey: keyVolume)
+            self.volume = savedVol > 0.0 ? savedVol : 1.0
         } else {
-            self.volume = 0.8
+            self.volume = 1.0
         }
 
         setupAudioSession()
@@ -73,8 +74,11 @@ public final class MusicManager: ObservableObject {
 
     private func setupAudioSession() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: [.mixWithOthers])
-            try AVAudioSession.sharedInstance().setActive(true)
+            let session = AVAudioSession.sharedInstance()
+            // .playback ensures loud, full-volume media output through iPhone speakers
+            // and avoids attenuation caused by ambient ducking, working even with silent switch active
+            try session.setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            try session.setActive(true)
         } catch {
             print("AudioSession setup error: \(error.localizedDescription)")
         }
@@ -86,13 +90,24 @@ public final class MusicManager: ObservableObject {
         isMuted = false
         savePrefs()
 
-        guard let url = Bundle.main.url(forResource: track.resourceName, withExtension: "wav") ??
-                        Bundle.main.url(forResource: track.resourceName, withExtension: "mp3") else {
-            print("Audio file not found: \(track.resourceName)")
+        var fileURL: URL? = Bundle.main.url(forResource: track.resourceName, withExtension: "mp3")
+        if fileURL == nil {
+            fileURL = Bundle.main.url(forResource: track.fileName, withExtension: nil)
+        }
+        if fileURL == nil {
+            fileURL = Bundle.main.url(forResource: track.resourceName, withExtension: "wav")
+        }
+        if fileURL == nil {
+            fileURL = Bundle.main.url(forResource: "music_\(track.resourceName)", withExtension: "wav")
+        }
+
+        guard let url = fileURL else {
+            print("Audio file not found for track: \(track.fileName)")
             return
         }
 
         do {
+            try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer?.stop()
             audioPlayer = nil
 

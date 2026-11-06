@@ -48,9 +48,10 @@ Bao gồm trọn vẹn **100 mẫu vẽ vector** chia làm 4 danh mục với th
 - Toàn bộ giao diện, tiêu đề hộp thoại, thông báo Toast, tên 100 mẫu vẽ và danh mục đều được dịch chuẩn xác.
 
 ### 8. 🎵 Trình Phát Nhạc Nền Thư Giãn (Background Music)
-- Tích hợp sẵn trọn vẹn **6 bản nhạc nền thư giãn** (`music_1.wav` đến `music_6.wav`) giống hệt phiên bản Android.
+- Tích hợp sẵn trọn vẹn **6 bài hát MP3 chất lượng cao** từ thư mục `filenhac` (`1.mp3`, `22222.mp3`, `333.mp3`, `44.mp3`, `5.mp3`, `6.mp3`).
+- **Âm lượng to rõ như loa ngoài điện thoại**: Sử dụng `AVAudioSession` chuẩn `.playback` cho âm thanh phát qua loa ngoài to, rõ ràng và đầy đủ dynamic range ở mức âm lượng thiết bị (không bị giảm âm lượng bởi ambient ducking).
 - **Pill điều khiển nhanh** trên thanh công cụ phụ: hiển thị nốt nhạc hoạt họa, tên bài hát đang phát và nút bật/tắt câm tiếng (Mute) tiện lợi.
-- **Hộp thoại Cài đặt Nhạc**: cho phép bật/tắt nhạc nền, điều chỉnh âm lượng mượt mà và chuyển đổi qua lại giữa 6 bản nhạc với giao diện phát sáng neon tuyệt đẹp.
+- **Hộp thoại Cài đặt Nhạc**: cho phép bật/tắt nhạc nền, điều chỉnh âm lượng mượt mà (mặc định 100% full volume) và chuyển đổi qua lại giữa 6 bản nhạc với giao diện phát sáng neon tuyệt đẹp.
 
 ### 9. 🎬 Tái Hiện Từng Nét Vẽ & Xuất Video MP4 (Timelapse Video Replay & Export)
 - Nút bấm **Replay Video** phát sáng nổi bật trên thanh công cụ phụ.
@@ -99,7 +100,7 @@ VETRANH-IOS/
     │   ├── ImagePicker.swift              # Trình chọn ảnh từ Photo Library (PHPicker)
     │   └── ShareSheet.swift               # Trình chia sẻ ảnh/video tiêu chuẩn iOS
     ├── Resources/
-    │   └── Music/                         # 6 bản nhạc nền WAV (music_1.wav -> music_6.wav)
+    │   └── Music/                         # 6 bài hát MP3 chất lượng cao (1.mp3 -> 6.mp3)
     └── Assets.xcassets/
         ├── AccentColor.colorset
         └── AppIcon.appiconset
